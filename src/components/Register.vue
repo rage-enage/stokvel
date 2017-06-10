@@ -1,20 +1,26 @@
 <template>
   <div class="register">
-    <form>
-      <label>First Name: {{meow}}</label>
-      <input type='text' v-model="register.name"/>
-      <br/>
-      <label>Last Name: </label>
-      <input type='text' v-model="register.surname"/>
-      <br/>
-      <label>Email address:</label>
-      <input type='text'v-model="register.email"/>
-      <br/>
-      <label>Password:</label>
-      <input type='password'v-model="register.password"/>
-      <br/>
-      <input type='submit' v-on:click="registerUser"/>
-    </form>
+    <div class='row'>
+      <form v-on:submit.prevent v-on:submit.prevent="registerUser">
+        <label>First Name: {{meow}}
+          <input type='text' v-model="register.name"/>
+        </label>
+        <br/>
+        <label>Last Name: 
+          <input type='text' v-model="register.surname"/>
+        </label>
+        <br/>
+        <label>Email address:
+          <input type='text'v-model="register.email"/>
+        </label>
+        <br/>
+        <label>Password:
+          <input type='password'v-model="register.password"/>
+        </label>
+        <br/>
+        <input type='submit'/>
+      </form>
+    </div>
   </div>
 </template>
 
