@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <div class='row'>
+    <div class='row columns'>
       <form v-on:submit.prevent v-on:submit.prevent="registerUser">
         <label>First Name: {{meow}}
           <input type='text' v-model="register.name"/>

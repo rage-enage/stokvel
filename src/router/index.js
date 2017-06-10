@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import CreateEvent from '@/components/CreateEvent'
+import VoteEvent from '@/components/VoteEvent'
 import NotFound from '@/components/404'
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
       path: '/create-event',
       name: 'Login',
       component: CreateEvent
+    },
+    {
+      path: '/vote-event',
+      name: 'VoteEvent',
+      component: VoteEvent
     },
     {
       path: '*',
