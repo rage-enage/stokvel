@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>Stokvel.io</span>
     </header>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
@@ -37,8 +36,8 @@ header {
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
-  background-color: #4fc08d;
-  color: #ffffff;
+  background-color: #3F51B5;
+  color: rgba(255,255,255,.87);
 }
 
 header span {
