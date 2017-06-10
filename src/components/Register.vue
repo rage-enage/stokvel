@@ -31,7 +31,7 @@ export default {
             email: '',
             password: ''
         },
-        meow: 'rawr'
+        meow: ''
       };
   },
   methods: {

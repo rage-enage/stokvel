@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>Stokvel.io</span>
+      <span><router-link to="/">Stokvel.io</router-link></span>
     </header>
     <main>
       <router-view></router-view>
@@ -40,6 +40,10 @@ header {
   color: rgba(255,255,255,.87);
 }
 
+header a {
+  color: white;
+}
+
 header span {
   display: block;
   position: relative;
@@ -50,4 +54,9 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+
+a {
+  text-decoration: none;
+}
+
 </style>
