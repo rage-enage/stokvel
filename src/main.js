@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import VueResource from 'vue-resource'
 import router from './router'
+import VueSweetAlert from 'vue-sweetalert'
 
 Vue.config.productionTip = false
 
@@ -16,3 +17,4 @@ new Vue({
 })
 
 Vue.use(VueResource);
+Vue.use(VueSweetAlert)

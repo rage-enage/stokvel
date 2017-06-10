@@ -1,7 +1,7 @@
 <template>
 
     <div class="register">
-        <form>
+        <form v-on:submit.prevent>
             <label>Name: {{meow}}</label>
             <input type='text'/>
             <input type='submit' v-on:click="register"/>
@@ -20,11 +20,16 @@ export default {
   },
   methods: {
     register: function (event) {
-        console.log(this);
+        event.preventDefault();
         this.$http.get('https://rehive.com/api/3/').then(response => {
             console.log(response)
             this.meow = response.body;
-
+            this.$swal({
+                title: "Auto close alert!",
+                text: "I will close in 2 seconds.",
+                timer: 2000,
+                showConfirmButton: false
+            });
         }, err => {
             // error callback
         });
