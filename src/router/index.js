@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import CreateEvent from '@/components/CreateEvent'
 import VoteEvent from '@/components/VoteEvent'
 import NotFound from '@/components/404'
+import CreateStokvel from '@/components/CreateStokvel'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/vote-event',
       name: 'VoteEvent',
       component: VoteEvent
+    },
+    {
+      path: '/create-stokvel',
+      name: 'CreateStokvel',
+      component: CreateStokvel
     },
     {
       path: '*',

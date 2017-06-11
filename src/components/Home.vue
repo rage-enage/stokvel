@@ -9,6 +9,7 @@
     <ul v-if="UserService.loggedIn">
       <li><router-link to="/vote-event">Vote event</router-link></li>
       <li><router-link to="/create-event">Create event</router-link></li>
+      <li><router-link to="/create-stokvel">Create Stokvel</router-link></li>
     </ul>
   </div>
 </template>

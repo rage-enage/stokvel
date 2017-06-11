@@ -10,7 +10,7 @@
           Password:
           <input type='password' required />
         </label>
-        <input type='submit' v-on:click="loginUser"/>
+        <input type='submit' v-on:click="loginUser" value="log in" class="button"/>
       </form>
     </div>
   </div>

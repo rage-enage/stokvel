@@ -15,7 +15,7 @@
           Event price
           <input type='number' />
         </label>
-        <input type='submit' v-on:click="createEvent"/>
+        <input type='submit' v-on:click="createEvent" class='button'/>
       </form>
     </div>
   </div>

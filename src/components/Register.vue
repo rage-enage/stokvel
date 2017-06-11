@@ -18,7 +18,7 @@
           <input type='password'v-model="register.password"/>
         </label>
         <br/>
-        <input type='submit'/>
+        <input type='submit' value='Register' class='button'/>
       </form>
     </div>
   </div>
@@ -55,7 +55,7 @@ export default {
             showConfirmButton: false
         });
         setTimeout(() => {
-            this.$route.router.go('/');
+            this.$router.push('/')
         }, waitTime + 100); // Add 100ms before redirect.
       }, err => {
         colorLog(`There was an error ${err.bodyText}`);
