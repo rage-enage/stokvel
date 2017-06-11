@@ -22,20 +22,28 @@
     data() {
       return {};
     },
-    created () {
-      // console.log(this.ThingIWantToShare)
-    },
+    // We get the user service object, this is injected
+    // So it will be shared accross the app.
+    inject: ['UserService'],
     methods: {
       loginUser(event) {
         event.preventDefault();
         // http://www.mocky.io/v2/593c54f8100000791cc4781b
         // this.$http.post('http://www.mocky.io/v2/5185415ba171ea3a00704eed', { data: JSON.stringify(this.register) }).then(response => {
         this.$http.get('http://www.mocky.io/v2/593c54f8100000791cc4781b').then(response => {
-          const data = JSON.parse(JSON.stringify(response.bodyText));
           // Set the header
           this.$http.headers.common['Authorization'] = 'Basic YXBpOnBhc3N3b3Jk';
-          console.log("user is ", data);
-          this.$route.router.go('/');
+          // For some reason in our test data None does not have "",
+          // To remedy that lets replace none with ""
+          const parsedBody = response.bodyText.replace(/None/g, `""`);
+          const data = JSON.parse(parsedBody);
+
+          // Let's set our variables
+          this.UserService.token = data.data.token;;
+          this.UserService.email = data.data.user.email;
+          this.UserService.first_name = data.data.user.first_name;
+          this.UserService.loggedIn = true;
+          this.$router.push('/')
         },
         err => {
           colorLog(`An error occured ${err}`);

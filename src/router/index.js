@@ -28,7 +28,7 @@ export default new Router({
     },
     {
       path: '/create-event',
-      name: 'Login',
+      name: 'CreateEvent',
       component: CreateEvent
     },
     {

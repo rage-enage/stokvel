@@ -2,9 +2,13 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <ul>
+    <ul v-if="!UserService.loggedIn">
       <li><router-link to="/register">Go to Register</router-link></li>
       <li><router-link to="/login">Go to Login</router-link></li>
+    </ul>
+    <ul v-if="UserService.loggedIn">
+      <li><router-link to="/vote-event">Vote event</router-link></li>
+      <li><router-link to="/create-event">Create event</router-link></li>
     </ul>
   </div>
 </template>
@@ -12,10 +16,14 @@
 <script>
 export default {
   name: 'hello',
+  inject: ['UserService'],
   data () {
     return {
       msg: 'Welcome to Stokvel.io'
     }
+  },
+  created() {
+    console.log("Home user service", this.UserService);
   }
 }
 </script>

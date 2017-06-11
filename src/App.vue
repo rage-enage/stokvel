@@ -10,8 +10,14 @@
 </template>
 
 <script>
+// Import our user services object which shall be injected.
+import {UserService} from './services/UserService.js'
 export default {
-  name: 'app'
+  name: 'app',
+  // Inject any objects, ES6 destructering, would be 'UserService': UserService
+  provide: {
+    UserService
+  }  
 }
 </script>
 
