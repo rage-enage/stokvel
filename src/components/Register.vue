@@ -18,7 +18,7 @@
           <input type='password'v-model="register.password"/>
         </label>
         <br/>
-        <input type='submit' value='Register' class='button'/>
+        <input type='submit' value='Register' class="light-blue darken-4 waves-effect waves-light btn"/>
       </form>
     </div>
   </div>

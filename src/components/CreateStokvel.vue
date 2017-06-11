@@ -14,7 +14,7 @@
         Monthly Payment
         <input type='number' />
       </label>
-      <input type='submit' value='Create' class='button'/>
+      <input type='submit' value='Create' class="light-blue darken-4 waves-effect waves-light btn"/>
     </form>
   </div>
 </template>

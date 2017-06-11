@@ -15,7 +15,7 @@
           Event price
           <input type='number' />
         </label>
-        <input type='submit' v-on:click="createEvent" class='button'/>
+        <input type='submit' v-on:click="createEvent" class="light-blue darken-4 waves-effect waves-light btn"/>
       </form>
     </div>
   </div>

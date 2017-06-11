@@ -16,13 +16,12 @@
           <p>
             {{event.description}}
           </p>
+          <div class="small-6 small-offset-3 columns">
+            <button type="button" class="waves-effect waves-light btn vote-button light-blue darken-4" v-on:click="voteForEvent(event)">Vote</button>
+          </div>
         </div>
-        <div> 
-          Votes: <br/>
+        <div class="vote-bubble btn btn-floating green lighten-2" v-bind:class="{pulse: event.shouldPulse}"> 
           {{event.votes}}
-        </div>
-        <div class="small-2 columns">
-          <button type="button" class="button" v-on:click="voteForEvent(event)">Vote</button>
         </div>
       </div>
     </div>
@@ -43,19 +42,22 @@ export default {
               'title': 'Cool chair',
               'description' : 'Slam the chair',
               'price' : 130,
-              'votes' : 2
+              'votes' : 2,
+              'shouldPulse': false
             },
             {
               'title': 'A new window',
               'description' : 'Gotta fix the cracked window',
               'price' : 60,
-              'votes' : 0
+              'votes' : 0,
+              'shouldPulse': false
             },
             {
               'title': 'Cool chair',
               'description' : 'Slam the chair',
               'price': 400,
-              'votes' : 10
+              'votes' : 10,
+              'shouldPulse': false
             },
           ]
         },
@@ -68,13 +70,15 @@ export default {
               'title': 'A big desk',
               'description' : 'We need a big desk to do things',
               'price' : 300,
-              'votes' : 2
+              'votes' : 2,
+              'shouldPulse': false
             },
             {
               'title': 'Siri homepad',
               'description' : 'Satisfy those hipster cravings',
               'price' : 5000,
-              'votes' : 0
+              'votes' : 0,
+              'shouldPulse': false
             },
           ]
         }
@@ -85,11 +89,28 @@ export default {
   methods: {
     voteForEvent(event) {
       event.votes ++;
+      event.shouldPulse = true;
+      setTimeout(() => {
+        event.shouldPulse = false;
+      }, 350)
     }
   }
 }
 </script>
 
 <style>
+  .vote-button {
+    width: 100%;
+  }
 
+  select {
+    display: block;
+  }
+
+  .vote-bubble {
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+  }
 </style>
